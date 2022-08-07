@@ -7,24 +7,35 @@ public class divideByZero {
 
 	public static void main(String[] args) {
 		
-		try {
-			
-			Scanner s = new Scanner(System.in);
-			System.out.println("Number: ");
-			int a = s.nextInt();
-			System.out.println("Divider: ");
-			int b = s.nextInt();
-			
-			System.out.println(a / b);
-			
-		} 
-		catch(InputMismatchException e1) {
-			System.out.println("Erro of InputMismatchException catch!");
-		}
-		catch(Throwable e2) {
-			System.out.println("Erro of ArithmeticException catch!");
-		}
 		
+			Scanner s = new Scanner(System.in);
+			boolean continuar = true;
+		
+		do {
+			
+			try {
+				
+				System.out.println("Number: ");
+				int a = s.nextInt();
+				System.out.println("Divider: ");
+				int b = s.nextInt();
+				
+				System.out.println(a / b);
+				continuar = false;
+				
+			} 
+			catch(InputMismatchException e1) {
+				System.out.println("Favor inserir numeros inteiros");
+				s.nextLine(); //descarta entrada inválida
+			}
+			catch(Throwable e2) {
+				System.out.println("O divisor deve ser diferente de zero");
+			}
+			finally {
+				System.out.println("Finally executado...");
+			}
+			
+		} while(continuar);
 		
 		/* int x = 1/0;
 		 * in this exception we have the following message in the console:
