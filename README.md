@@ -1,1 +1,2 @@
-# java_lessons_repo
+# Learning Java with IDE Eclipse
+This is my repository to Java SE lessons
